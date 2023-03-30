@@ -100,7 +100,7 @@ console.log(truncateString("A-tisket a-tasket A green and yellow basket", 1));
 
 //Nineth Finders Keepers
 function findElement(arr, func) {
-  return arr.find(value => func(value) === true);
+  return arr.find((value) => func(value) === true);
 }
 
 console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
@@ -108,35 +108,33 @@ console.log(findElement([1, 2, 3, 4], (num) => num % 2 === 0));
 //Derived exercise nine find all elements that achieve statement or function
 function findElement1(arr, func) {
   let newArray = [];
-  for(let i = 0; i < arr.length; i++){
-    if(func(arr[i]) === true) {
+  for (let i = 0; i < arr.length; i++) {
+    if (func(arr[i]) === true) {
       newArray.push(arr[i]);
     }
   }
-  return newArray
+  return newArray;
 }
 
 console.log(findElement1([1, 2, 3, 4, 5, 6, 7, 8], (num) => num % 2 === 0));
 
 // tenth Boo who
 function booWho(bool) {
-  if(typeof(bool) === "boolean"){
+  if (typeof bool === "boolean") {
     return true;
-  }else {
-    return false
+  } else {
+    return false;
   }
 }
 
 console.log(booWho(null));
 
-// eleventh Title Case a Setence 
+// eleventh Title Case a Setence
 function titleCase(str) {
-  let newWord = str.split(" ");
-  let result = "";
-  for(let i = 0; i < newWord.length; i++) {
-    result += newWord[i][0].toUpperCase();
-  }
-  return result;
+  return str.toLowerCase()
+  .split(" ")
+  .map((val) => val.replace(val.charAt(0), val.charAt(0).toUpperCase()))
+  .join(" ")
 }
 
 console.log(titleCase("I'm a little tea pot"));
